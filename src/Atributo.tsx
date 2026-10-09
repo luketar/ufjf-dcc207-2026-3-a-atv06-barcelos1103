@@ -1,17 +1,21 @@
 import { useState } from "react";
 import "./Atributo.css"
 
-export default function Atributo(){
+type AtributoProps = {
+    icone: String;
+};
+
+export default function Atributo({icone} : AtributoProps){
     const [valor, setValor] = useState<number>(0)
     let coracoes = "";
     for (let i=0; i < 5; i++){
 
         if(i<valor){
-            coracoes += "❤️"
+            coracoes += icone
 
         }
         else{
-            coracoes += "🩶"
+            coracoes += icone
         }
     }
     return (
